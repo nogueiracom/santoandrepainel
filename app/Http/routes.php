@@ -41,6 +41,7 @@ Route::get('/documentos', 'Documentos@index');
 Route::get('/fotos-da-obra', 'FotosObras@index');
 Route::get('/fotos/{slug}', 'FotosObras@singleposts')->name('my_route_name');
 Route::get('/comunicados', 'Comunicado@index');
+Route::get('/comunicado/{slug}', 'Comunicado@singlecomunicados');
 Route::get('/chamados', 'ChamadoController@userChamados');
 Route::get('chamados/{chamado_id}', 'ChamadoController@show');
 Route::get('novo_chamado', 'ChamadoController@create');

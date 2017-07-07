@@ -37,9 +37,9 @@ class DashboardController extends Controller {
     {
         $postagens = DB::table('articles')->count();
         $usuario = DB::table('users')->count();
-        $analyticsData = Analytics::fetchTotalVisitorsAndPageViews(Period::days(30))->sum('visitors');
+        // $analyticsData = Analytics::fetchTotalVisitorsAndPageViews(Period::days(30))->sum('visitors');
 
         $this->data['title'] = trans('backpack::base.dashboard'); // set the page title
-        return view('vendor.backpack.base.dashboard' , $this->data, compact('postagens','usuario', 'analyticsData'));
+        return view('vendor.backpack.base.dashboard' , $this->data, compact('postagens','usuario'));
     }
 }

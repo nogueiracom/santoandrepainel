@@ -61,17 +61,26 @@ trait PageTemplates
                         'placeholder' => 'Your content here',
         ]);
 
-        $this->crud->addField([ // image
-          'label' => "Logo do Empreendimento",
-           'name' => "image",
-           'type' => 'image',
-           'upload' => true,
-           'crop' => false, // set to true to allow cropping, false to disable
-           'aspect_ratio' => 1, // ommit or set to 0 to allow any aspect ratio
-           'fake' => true,
-           'store_in' => 'nome_usuario',
-           //'prefix' => 'stora/empreendimento/' // in case you only store the filename in the database, this text will be prepended to the database value
+        // $this->crud->addField([ // image
+        //   'label' => "Logo do Empreendimento",
+        //    'name' => "image",
+        //    'type' => 'image',
+        //    'upload' => true,
+        //    'crop' => false, // set to true to allow cropping, false to disable
+        //    'aspect_ratio' => 1, // ommit or set to 0 to allow any aspect ratio
+        //    'fake' => true,
+        //    'store_in' => 'nome_usuario',
+        //    //'prefix' => 'stora/empreendimento/' // in case you only store the filename in the database, this text will be prepended to the database value
+        // ]);
+
+        $this->crud->addField([   // Upload
+            'name' => 'image',
+            'label' => 'Image',
+            'type' => 'browse',
+            'fake' => true,
+            'store_in' => 'nome_usuario'
         ]);
+
 
 
 

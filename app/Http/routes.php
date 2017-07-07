@@ -11,15 +11,6 @@ use App\Http\Middleware\Checkadmin;
 |
 */
 
-
-//Routes Estudos
-Route::get('/clientes',	 'ClientesControlle	r@index');
-Route::get('/clientes/novo', 'ClientesController@novo');
-Route::get('/clientes/{cliente}/editar', 'ClientesController@editar');
-Route::post('/clientes/salvar', 'ClientesController@salvar');
-Route::patch('/clientes/{cliente}', 'ClientesController@atualizar');
-Route::delete('/clientes/{cliente}', 'ClientesController@deletar');
-Route::get('/usuarios', 'usuariodeController@index');
 Route::post('/article/{id}/upload_images','vendor\backpack\crud\src\app\Http\Controllers\CrudFeatures\AjaxUploadImagesTrait@ajaxUploadImages');
 
 
@@ -55,8 +46,8 @@ Route::group(['middleware' => ['role:Admin']], function() {
   Route::get('/admin/chamados/', 'ChamadoController@index');
   Route::get('/admin/chamados/{chamado_id}', 'ChamadoController@showadmin');
   Route::post('/admin/chamados/{chamado_id}', 'ChamadoController@close');
-	Route::get('/usuarios/informacoes', ['as'=>'userinfo.index','uses'=>'UserFormController@index']);
-	Route::post('/usuarios/informacoes', ['as'=>'userinfo.cadastro','uses'=>'UserFormController@cadastro']);
+	Route::get('/admin/usuarios/informacoes', ['as'=>'userinfo.index','uses'=>'UserFormController@index']);
+	Route::post('/admin/usuarios/informacoes', ['as'=>'userinfo.cadastro','uses'=>'UserFormController@cadastro']);
 });
 
 

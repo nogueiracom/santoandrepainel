@@ -534,7 +534,7 @@ mark,
 .blockquote-reverse .blockquote-footer::after {
   content: "\00A0 \2014"; }
 
-.img-fluid, .content .item .color img, .content-obras .item .color img, .galeria .item .color img, .content-comunicado .item .color img, .content-chamados .item .color img, .galeria .img-box figure img, .content-comunicado .box-notificacao .media .img img, .content-comunicado .box-notificacao footer .item .icones .img img, footer .item .content-comunicado .box-notificacao .icones .img img, footer .logo-footer img {
+.img-fluid, .content .item .color img, .content-obras .item .color img, .galeria .item .color img, .content-comunicado .item .color img, .content-chamados .item .color img, .galeria .img-box figure img, .content-comunicado .box-notificacao .media .img img, .content-comunicado .box-notificacao footer .item .icones .img img, footer .item .content-comunicado .box-notificacao .icones .img img, #app-layout .sidebar a img, footer .logo-footer img {
   max-width: 100%;
   height: auto; }
 
@@ -4560,7 +4560,7 @@ a.bg-inverse:focus, a.bg-inverse:hover {
 .d-inline-block {
   display: inline-block !important; }
 
-.d-block, .content .item .color img, .content-obras .item .color img, .galeria .item .color img, .content-comunicado .item .color img, .content-chamados .item .color img, .content-chamados .comments .card-block .msg_container .avatar img, #app-layout header img, #app-layout .sidebar img, #app-layout .social li a, footer .logo-footer img {
+.d-block, .content .item .color img, .content-obras .item .color img, .galeria .item .color img, .content-comunicado .item .color img, .content-chamados .item .color img, .content-chamados .comments .card-block .msg_container .avatar img, #app-layout header img, #app-layout .sidebar a img, #app-layout .social li a, footer .logo-footer img {
   display: block !important; }
 
 .d-table {
@@ -5562,7 +5562,7 @@ a.bg-inverse:focus, a.bg-inverse:hover {
   padding-top: 3rem !important;
   padding-bottom: 3rem !important; }
 
-.m-auto, .content .item .color img, .content-obras .item .color img, .galeria .item .color img, .content-comunicado .item .color img, .content-chamados .item .color img, .content-chamados .comments .card-block .msg_container .avatar img, #app-layout header img, #app-layout .sidebar img, #app-layout .social li a, footer .logo-footer img {
+.m-auto, .content .item .color img, .content-obras .item .color img, .galeria .item .color img, .content-comunicado .item .color img, .content-chamados .item .color img, .content-chamados .comments .card-block .msg_container .avatar img, #app-layout header img, #app-layout .sidebar a img, #app-layout .social li a, footer .logo-footer img {
   margin: auto !important; }
 
 .mt-auto {
@@ -7311,7 +7311,7 @@ h3 {
     margin-top: -50px;
     padding: 30px;
     background: #f1f3f5; }
-    #app-layout .sidebar img {
+    #app-layout .sidebar a img {
       margin-bottom: 30px; }
     #app-layout .sidebar ul {
       margin: 0px;

@@ -81,10 +81,13 @@ $v-agua: #30b3ad;
     padding: 30px;
     background: $c-clarinho;
 
-    img {
-      @extend .m-auto;
-      @extend .d-block;
-      margin-bottom: 30px;
+    a {
+      img {
+        @extend .img-fluid;
+        @extend .m-auto;
+        @extend .d-block;
+        margin-bottom: 30px;
+      }
     }
 
     ul {

@@ -10,13 +10,13 @@
               <a href="{{url('/'.$page->slug)}}">
                 <img src="{{json_decode($page->nome_usuario)->image}}" alt="{{$page->name}}" title="{{$page->name}}">
               </a>
-            <ul>
-              <li><img src="{{asset('/images/cliente/documento.png')}}" alt="Documentos"><span>Documentos</span><a href="{{url('/documentos')}}"></a></li>
-              <li><img src="{{asset('/images/cliente/comunicado.png')}}" alt="Comunicados"><span>Comunicados</span><a href="{{url('/comunicados')}}"></a></li>
-              <li><img src="{{asset('/images/cliente/fotos-da-obra.png')}}" alt="Documentos"><span>Fotos da Obra</span><a href="{{url('/fotos-da-obra')}}"></a></li>
-              <li><img src="{{asset('/images/cliente/chamado.png')}}" alt="Documentos"><span>Chamado</span></li>
-              <li><img src="{{asset('/images/cliente/avaliacao.png')}}" alt="Documentos"><span>Avaliação dos Corretores</span></li>
-            </ul>
+              <ul>
+                <li><img src="{{asset('/images/cliente/documento.png')}}" alt="Documentos"><span>Documentos</span><a href="{{url('/documentos')}}"></a></li>
+                <li><img src="{{asset('/images/cliente/comunicado.png')}}" alt="Comunicados"><span>Comunicados</span><a href="{{url('/comunicados')}}"></a></li>
+                <li><img src="{{asset('/images/cliente/fotos-da-obra.png')}}" alt="Documentos"><span>Fotos da Obra</span><a href="{{url('/fotos-da-obra')}}"></a></li>
+                <li><img src="{{asset('/images/cliente/chamado.png')}}" alt="Documentos"><span>Chamado</span><a href="{{url('/chamados')}}"></a></li>
+                <li><img src="{{asset('/images/cliente/avaliacao.png')}}" alt="Documentos"><span>Avaliação dos Corretores</span></li>
+              </ul>
             @endforeach
         </div>
     <div class="content-chamados margin">
@@ -37,11 +37,11 @@
 
                                   <input id="title" type="text" class="form-control" name="title" value="{{ old('title') }}">
 
-                                  @if ($errors->has('title'))
+                                  {{-- @if ($errors->has('title'))
                                       <span class="help-block">
                                           <strong>{{ $errors->first('title') }}</strong>
                                       </span>
-                                  @endif
+                                  @endif --}}
                           </div>
                         </div>
 
@@ -57,11 +57,11 @@
                                     @endforeach
                                 </select>
 
-                                @if ($errors->has('category'))
+                                {{-- @if ($errors->has('category'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('category') }}</strong>
                                     </span>
-                                @endif
+                                @endif --}}
                         </div>
                       </div>
                         <div class="boxform">
@@ -74,11 +74,11 @@
                                     <option value="high">Alta</option>
                                 </select>
 
-                                @if ($errors->has('priority'))
+                                {{-- @if ($errors->has('priority'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('priority') }}</strong>
                                     </span>
-                                @endif
+                                @endif --}}
                           </div>
                         </div>
 
@@ -87,12 +87,12 @@
 
 
                                 <textarea rows="10" id="message" class="form-control" name="message"></textarea>
-
+{{--
                                 @if ($errors->has('message'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('message') }}</strong>
                                     </span>
-                                @endif
+                                @endif --}}
                         </div>
 
 

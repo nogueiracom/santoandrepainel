@@ -1,0 +1,217 @@
+.content-obras {
+  @extend .content;
+  h1 {
+    color: #393d47 !important;
+
+    b {
+      font-weight: 500;
+    }
+  }
+  .panel-group {
+  @extend .col-12;
+
+    .panel {
+
+      .panel-heading h4 .collapsed > span {
+        -ms-transform: rotate(90deg) !important; /* IE 9 */
+        -webkit-transform: rotate(90deg) !important; /* Chrome, Safari, Opera */
+        transform: rotate(90deg) !important;
+      }
+      .panel-heading {
+        background: $a-claro;
+        overflow: hidden;
+        display: block;
+        position: relative;
+        padding: 25px 0;
+        border-radius: 0px;
+
+        h4 {
+          color: #fff;
+          a {
+            @extend .afull;
+            @extend .nav-link;
+            top: 10px;
+
+            span {
+              font: normal normal normal 14px/1 FontAwesome;
+              font-size: 3em;
+              position: absolute;
+              top: -7px;
+              right: 25px;
+              -ms-transform: rotate(-90deg); /* IE 9 */
+              -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+              transform: rotate(-90deg);
+              transition: all 0.3s ease;
+
+              &:before {
+                content: '\f105';
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .panel-body {
+
+      .box {
+        @extend .col-6;
+        padding: 0px 5px;
+        overflow: hidden;
+        display: block;
+
+        .color {
+          background: #f1f3f5;
+          min-height: 150px;
+          overflow: hidden;
+          display: block;
+          transition: bottom 8s ease;
+
+          .middle {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            transition: .5s ease;
+            background-color: #008CBA;
+
+              .text {
+                  color: #fff;
+                  font-size: 20px;
+                  position: absolute;
+                  top: 45%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  -ms-transform: translate(-50%, -50%);
+                  i {
+                    color: #fff;
+                  }
+              }
+
+            }
+
+          i {
+            width: 100%;
+            font-size: 40px;
+            text-align: center;
+            color: #218ccd;
+            margin: 30px 0px 15px 0px
+          }
+
+          p {
+            text-align: center;
+            margin-bottom: 15px;
+            color: #218ccd;
+            text-transform: uppercase;
+            font-weight: 500;
+            padding: 0 10px;
+          }
+
+          a {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0px;
+            left: 0px;
+          }
+        }
+
+        &:hover {
+          .middle {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  @include breakpoint(l) {
+
+
+    .panel-group .panel-body {
+
+      .box {
+          @include make-col(2);
+          margin-right: 5px;
+      }
+    }
+  }
+}
+
+
+.galeria {
+  @extend .content-obras;
+
+  .conteudo {
+    @extend .col-12;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .img-box {
+    @extend .col-6;
+    margin-bottom: 25px;
+
+    figure {
+      position: relative;
+      overflow: hidden;
+      display: block;
+
+      &:hover {
+        img {
+          opacity: 0.3;
+        }
+
+        .middle {
+          opacity: 1;
+        }
+      }
+
+      img {
+        @extend .img-fluid;
+        opacity: 1;
+        display: block;
+        height: auto;
+        transition: .5s ease;
+        backface-visibility: hidden;
+      }
+
+      .middle {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: .5s ease;
+        background-color: rgba(32, 141, 208, 0.78);
+        background-blend-mode: multiply;
+
+        .text {
+          font-size: 40px;
+          position: absolute;
+          top: 35%;
+          left: 45%;
+
+          i {
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+
+  @include breakpoint(l) {
+
+    .img-box {
+      @include make-col(4);
+    }
+
+  }
+}

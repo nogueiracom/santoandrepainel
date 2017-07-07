@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i');
+//Configuração de Cores e Fontes
+
+//Font
+$fonts: 'Rubik', sans-serif;
+
+//Cores
+$background: #fff;
+$cinzaclaro: #f1f3f5;
+$azulclaro: #218ccd;
+$azulescuro: #075da8;
+$azulmedio: #0f6db4;
+
+//Menu Responsivo
+$menu-amburguer: #343c48;
+$menu-background: #218ccd;
+$menu-link: #fff;
+
+$azul: #218ccc;
+
+
+//Menu Desktop
+$menu-color: #343c48;
+
+
+//Content
+$cor-content: #fff;
+
+// Formato padrão Titulos
+
+.itelefone {
+	background: url(../img/iphone.png) no-repeat;
+	height: 30px;
+	width: 30px;
+	margin-right: 5px;
+	display: block;
+	background-size: contain;
+}
+
+.ichat {
+	@extend .itelefone;
+	background: url(../img/ichat.png) no-repeat;
+	background-size: contain;
+}
+
+.iemail {
+	@extend .itelefone;
+	background: url(../img/imail.png) no-repeat;
+	background-size: contain;
+}
+
+.iwhatsapp {
+	@extend .itelefone;
+	background: url(../img/iwhatsapp.png) no-repeat;
+	background-size: contain;
+}
+
+%titulo {
+    font-family: $fonts;
+    color: white;
+    font-weight: bold;  
+    font-size: 1em;
+
+    @include breakpoint (l) {
+		font-size: 2em;
+    }  
+}
+
+%tituloline {
+	width: 100%;
+	font-size: 1.5em;
+    margin-top: 25px;
+    color: #218ccd;
+    text-transform: uppercase;
+
+    &:before {
+        content: "";
+        display: block;
+        border-top: dashed 1px #b5b5b5;
+        width: 92%;
+        height: 1px;
+        position: absolute;
+        margin-top: 13px;
+        z-index: 1;
+    } 
+
+   span { 
+        background: #fff;
+        padding: 0 20px 0px 0px;
+        position: relative;
+        z-index: 5;
+    }
+
+	@include breakpoint(l) { 
+
+		font-size: 30px;
+
+        &:before {
+            width: 97%;
+            margin-top: 23px;
+        }
+	}
+}
+
+h1 {
+	@extend %titulo;
+	text-transform: uppercase;
+	font-size: 1.3rem;
+
+	@include breakpoint(l) {
+		font-size: 3em;
+	}
+}
+
+h3 {
+	@extend %titulo;
+	font-weight: 500;
+
+}
+
+.alignleft {
+	float: left;
+	margin: 15px 15px 15px 0;
+}
+
+
+
+//Fontes
+@font-face {
+	font-family: 'TT Hazelnuts';
+	src: url('../fonts/TTHazelnuts-Bold.eot');
+	src: url('../fonts/TTHazelnuts-Bold.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/TTHazelnuts-Bold.woff') format('woff'),
+		url('../fonts/TTHazelnuts-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'TT Hazelnuts';
+	src: url('../fonts/TTHazelnuts-Regular.eot');
+	src: url('../fonts/TTHazelnuts-Regular.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/TTHazelnuts-Regular.woff') format('woff'),
+		url('../fonts/TTHazelnuts-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+
+// breakpoints
+   
+$S:     480px;   
+$M:     768px;     
+$L:     1100px;     
+
+// media queries
+
+@mixin MQ($canvas) {
+  @if $canvas == S {
+   @media only screen and (min-width: $S) { @content; } 
+  }
+  @else if $canvas == M {
+   @media only screen and (min-width: $M) { @content; } 
+  }
+  @else if $canvas == L {
+   @media only screen and (min-width: $L) { @content; } 
+  }
+}
+

@@ -1,0 +1,57 @@
+.content {
+
+  p {
+    color: #58585a;
+  }
+
+  .item {
+    @extend .col-6;
+
+    .color {
+      padding: 15px;
+      background: #f1f3f5;
+      position: relative;
+
+      img {
+        @extend .img-fluid;
+        @extend .d-block;
+        @extend .m-auto;
+      }
+
+      p {
+        color: #005ea6;
+        text-align: center;
+        margin-top: 10px;
+      }
+
+      a {
+        display: block;
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+      }
+    }
+  }
+
+  @include breakpoint(m) {
+
+    .item {
+        @include make-col(2.4);
+
+        &:nth-child(2) {
+          padding-left: 0px;
+        }
+    }
+  }
+}
+
+.margin {
+
+  @include breakpoint(m) {
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+  }
+}

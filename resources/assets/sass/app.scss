@@ -1,0 +1,387 @@
+@import "node_modules/bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Rubik:400,400i,700,900');
+@import "mix";
+@import "settings";
+
+//Settings
+$rubik: 'Rubik';
+$c-clarinho: #f1f3f5;
+$a-claro: #218ccd;
+$a-escuro: #005ea6;
+$cinza: #393d47;
+$c-claro: #656870;
+$v-agua: #30b3ad;
+
+.afull {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+}
+
+//Pages
+@import "documentos";
+@import "fotosobras";
+@import "comunicados";
+@import "chamados";
+@import "dashboardchamados";
+@import "lhome";
+
+.clear {
+  clear: both;
+}
+
+#app-layout {
+
+  font-family: $rubik;
+
+  header {
+    background-color: #fff;
+    padding: 30px;
+
+    img {
+      @extend .m-auto;
+      width: 50%;
+      @extend .d-block;
+    }
+
+    @include breakpoint(m) {
+
+      img {
+        width: 25%;
+      }
+    }
+  }
+
+  .banner {
+    padding: 13% 0;
+    background-size: cover !important;
+    background-position: center !important;
+
+    h2 {
+      @extend .col-12;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    @include breakpoint(m) {
+
+      h2 {
+        margin-left: 20px;
+        text-align: left;
+      }
+    }
+  }
+
+  //Sidebar
+  .sidebar {
+    margin-top: -50px;
+    @extend .col-12;
+    padding: 30px;
+    background: $c-clarinho;
+
+    img {
+      @extend .m-auto;
+      @extend .d-block;
+      margin-bottom: 30px;
+    }
+
+    ul {
+      margin: 0px;
+      padding: 0px;
+
+      li {
+        list-style: none;
+        background: $a-claro;
+        color: #fff;
+        width: 100%;
+        display: block;
+        overflow: hidden;
+        padding: 10px 20px;
+        margin-top: 20px;
+        position: relative;
+
+        a {
+          text-decoration: none;
+          color: #fff;
+          width: 100%;
+          height: 100%;
+          top: 0px;
+          left: 0px;
+          position: absolute;
+        }
+
+        span {
+          text-transform: uppercase;
+          margin-top: 15px;
+          display: flex;
+          margin-left: 8px;
+          float: left;
+          width: 116px;
+        }
+
+        img {
+          float: left;
+        }
+
+        &:nth-child(2) {
+          background: $a-escuro;
+        }
+
+        &:nth-child(3) {
+          background: $cinza;
+        }
+
+        &:nth-child(4) {
+          background: $c-claro;
+        }
+
+        &:nth-child(5) {
+          background: $v-agua;
+        }
+      }
+    }
+
+    @include breakpoint(xs) {
+        @include make-col(5);
+    }
+
+    @include breakpoint(m) {
+      @include make-col(3);
+    }
+  }
+
+
+  //content
+  .content {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    @extend .col-12;
+
+    h1 {
+      color: $a-escuro;
+      text-transform: uppercase;
+    }
+
+    @include breakpoint(xs) {
+      @include make-col(7);
+    }
+
+    @include breakpoint(m) {
+      @include make-col(9);
+    }
+
+  }
+
+
+  //Footer Social
+  .social {
+    background: #dee2e6;
+    padding: 15px 0;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+
+    li {
+      float: left;
+      list-style: none;
+      a {
+          width: 30%;
+          @extend .m-auto;
+          @extend .d-block;
+
+          img {
+            width: 100%;
+          }
+      }
+    }
+
+    @include breakpoint(xs) {
+
+      li>a {
+        width: 10%;
+      }
+    }
+  }
+
+
+}
+
+
+footer {
+	background: #363d46;
+	padding-top: 20px;
+	padding-bottom: 10px;
+	line-height: 20px;
+
+	.newsletter {
+		display: none;
+	}
+
+	.item {
+		@extend .col-12;
+
+		h3 {
+      color: #fff;
+			text-align: center;
+			margin: 15px 0;
+			font-size: 1.2em;
+		}
+
+		.icones {
+			@extend .media;
+			padding-left: 15px;
+
+			.icon-map {
+				@extend .d-flex;
+				@extend .mr-3;
+				width: 10%;
+				margin-right: 0px !important;
+				margin-top: 15px;
+			}
+
+			.icon-email {
+				@extend .icon-map;
+				width: 10%;
+				padding: 2px 6px;
+			}
+
+			p {
+
+				@extend .media-body;
+				font-size: 1em;
+				color: #fff;
+			}
+		}
+
+		.line {
+			p {
+				line-height: 40px;
+			}
+		}
+
+		nav {
+
+			li {
+				list-style: none;
+
+				a {
+					@extend .nav-link;
+					@extend %titulo;
+					padding: .2em 1em;
+					font-weight: 300;
+					color: #fff;
+
+					i {
+						color: #218ccc;
+						margin-right: 3px;
+					}
+
+				}
+			}
+
+			.current-menu-item {
+				a {
+					font-weight: 600;
+				}
+			}
+		}
+	}
+
+	.logo-footer {
+		@extend .col-12;
+		margin-top: 30px;
+
+		img {
+			@extend .img-fluid;
+			@extend .d-block;
+			@extend .m-auto;
+			width: 80%;
+		}
+	}
+
+	p {
+		@extend .col-12;
+		margin-top: 10px;
+		margin-bottom: 0px;
+		text-align: left;
+		color: #fff;
+		font-size: 0.8em;
+	}
+
+	@include breakpoint(l) {
+
+		.newsletter {
+			display: block;
+		}
+
+		.logo-footer {
+			@include make-col(4);
+			padding: 0px;
+			margin-top: 0px;
+
+			img {
+				margin: 20px 0px!important;
+			}
+		}
+
+		p {
+			margin-top: 0px;
+			font-size: 0.9em;
+		}
+
+		.item {
+			@include make-col(4);
+
+			h3 {
+				text-align: left;
+				font-size: 1.4em;
+			}
+
+			.icones {
+				padding-left: 0px;
+
+				.icon-map {
+					margin-top: -7px;
+					margin-right: 0px !important;
+				}
+
+				p {
+					font-size: 0.9em;
+				}
+			}
+
+			.escritorio {
+				margin-left: 50px;
+			}
+
+			nav {
+
+				li {
+					font-size: 0.5em;
+
+					a {
+						font-weight: 400;
+						padding: .0em;
+						font-size: 1.8em;
+					}
+				}
+
+			}
+
+			&:nth-child(1) {
+				@include make-col(5);
+			}
+
+			&:nth-child(2) {
+				@include make-col(3);
+			}
+
+		}
+	}
+}
+
+#opt_1 {
+	width: 91%;
+}

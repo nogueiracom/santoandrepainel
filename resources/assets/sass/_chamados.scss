@@ -1,0 +1,187 @@
+.content-chamados {
+  @extend .content;
+
+  .novochamado {
+    @extend .btn;
+    @extend .btn-primary;
+    font-size: 14px;
+    padding: 15px 20px;
+    text-transform: uppercase;
+  }
+
+  .table {
+    th {
+      color: #656870;
+    }
+  }
+
+  .control-label {
+    color: #393d47;
+  }
+
+  .ticket-info {
+    background: #218ccd;
+    padding: 10px;
+    color: #fff;
+
+    b {
+      font-weight: 500;
+    }
+
+    p {
+      color: #fff;
+    }
+  }
+  select.form-control:not([size]):not([multiple]) {
+    height: calc(3.25rem + 2px);
+  }
+
+  .btnchamado {
+    @extend .btn;
+    @extend .btn-primary;
+    font-size: 14px;
+    margin-left: 15px;
+    margin-top: 20px;
+    text-transform: uppercase;
+    padding: 15px 20px;
+  }
+
+  .boxform {
+    @extend .col-4;
+    float: left;
+  }
+
+  .textarea {
+    @extend .col-12;
+    overflow: hidden;
+    margin-top: 75px;
+  }
+
+
+  .comments {
+    .card {
+      margin-bottom: 10px;
+      border-radius: 0px;
+      .media-photo {
+        width: 4%;
+      }
+    }
+
+    .card-block {
+
+      .base_receive {
+
+        .avatar {
+
+          &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            border: 5px solid #FFF;
+            border-left-color: rgba(0, 0, 0, 0);
+            border-bottom-color: rgba(0, 0, 0, 0);
+          }
+
+          &:after {
+              content: "";
+              position: absolute;
+              top: 0;
+              right: 0;
+              width: 0;
+              height: 0;
+              border: 5px solid #FFF;
+              border-left-color: rgba(0, 0, 0, 0);
+              border-bottom-color: rgba(0, 0, 0, 0);
+          }
+        }
+      }
+
+      .msg_container {
+          padding: 10px;
+          overflow: hidden;
+          display: flex;
+
+          .avatar {
+              position: relative;
+
+              img {
+                @extend .m-auto;
+                @extend .d-block;
+                width: 55%;
+              }
+          }
+
+          .messages {
+
+              background: #f3f3f3;
+              padding: 10px;
+              border-radius: 2px;
+              box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+              max-width:100%;
+
+              time {
+                  font-size: 11px;
+                  color: #ccc;
+              }
+
+              p {
+                  font-size: 13px;
+                  margin: 0 0 0.2rem 0;
+                }
+          }
+      }
+
+    }
+
+    .card-header {
+      background-color: #f1f3f5;
+
+      a {
+        @extend .nav-link;
+
+        .imagem-usuario {
+          float: left;
+          width: 7%;
+          margin-right: 10px;
+        }
+
+        .label-danger {
+          float: right;
+        }
+
+        p {
+          font-weight: 400;
+
+          b {
+            font-weight: 500;
+          }
+        }
+
+        .criado {
+          color: #999;
+        }
+      }
+    }
+
+    .panel-success {
+      border-color: #dfdfdf !important;
+
+      .card-header {
+        background-color: rgba(214, 214, 214, 0.36);
+        border-color: #dfdfdf;
+
+        a {
+          font-weight: 400;
+          color: #393d47;
+        }
+      }
+    }
+  }
+}
+
+.label-danger {
+  font-weight: 500 !important;
+}

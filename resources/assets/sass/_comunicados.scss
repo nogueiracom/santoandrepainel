@@ -1,0 +1,80 @@
+.content-comunicado {
+  @extend .content;
+
+  .back {
+    @extend .btn;
+    @extend .btn-primary;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 25px;
+    background: #005ea6;
+  }
+
+  .conteudo {
+    overflow: hidden;
+    display: block;
+  }
+
+  .box-notificacao {
+    @extend .col-12;
+
+    .color {
+      margin-top: 20px;
+      background: #fff;
+    }
+
+    .media {
+      border-bottom: 1px solid #d4d4d4;
+      margin-top: 0px;
+      padding-top: 15px;
+      overflow: hidden;
+      position: relative;
+
+      a {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        height: 100%;
+        width: 100%;
+      }
+
+
+      &:hover {
+        background: rgba(212, 212, 212, 0.41);
+      }
+
+      .img {
+        @extend .col-1;
+        float: left;
+
+        img {
+          @extend .img-fluid;
+        }
+      }
+    }
+
+    .media-body {
+      width: 100%;
+      padding-right: 15px;
+
+
+
+      span {
+        color: #005ea6;
+        float: right;
+      }
+
+      .title {
+        font-size: 14px;
+        color: #005ea6;
+        margin: 0px;
+        padding: 0px;
+      }
+
+      p {
+        margin-top: 5px;
+      }
+    }
+  }
+}

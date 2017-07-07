@@ -1,0 +1,59 @@
+/*!
+ * Bootstrap v4.0.0-alpha.6 (https://getbootstrap.com)
+ * Copyright 2011-2017 The Bootstrap Authors
+ * Copyright 2011-2017 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+/*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
+
+
+.user-block p {
+	margin-left: 50px;
+}
+
+.comentarios {
+	float: right;
+}
+
+.user-block p .categoria {
+	margin-left: 10px;
+}
+
+.box.box-warning {
+	    border-top-color: #00a65a !important;
+}
+
+.voltar {
+	position: absolute;
+	top: 12%;
+	right: 33px;
+}
+
+.direct-chat-warning .right>.direct-chat-text {
+  background: #00a65a !important;
+  border-color: #00a65a !important;
+}
+
+.direct-chat-warning .right>.direct-chat-text:after, .direct-chat-warning .right>.direct-chat-text:before{
+	    border-left-color: #00a65a !important;
+}
+
+.content-header>.semseta>li+li:before {
+	display: none !important;
+}
+
+.semseta a {
+	color: #fff !important;
+}
+
+.box-widget > .close {
+	margin-right: 8px;
+	font-size: 40px;
+}
+
+.content-header-cadastro {
+	margin-right: auto;
+	margin-left: auto;
+	padding: 15px;
+	overflow: hidden;
+}

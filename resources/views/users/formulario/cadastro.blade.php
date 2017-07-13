@@ -18,15 +18,9 @@
 	<div class="content">
 		<div class="panel panel-default">
 		<div class="content">
-		@if ($message = Session::get('success'))
-			<div class="alert alert-success">
-				<p>{{ $message }}</p>
-			</div>
-			<img src="../images/{{ Session::get('path') }}">
-		@endif
 		@if (count($errors) > 0)
 			<div class="alert alert-danger">
-				<strong>Whoops!</strong> There were some problems with your input.<br><br>
+				<strong>Epá!</strong> Preencha todos os campos.<br><br>
 				<ul>
 					@foreach ($errors->all() as $error)
 						<li>{{ $error }}</li>
@@ -46,15 +40,15 @@
                   {!! Form::text('titulo', null, array('placeholder' => 'Name','class' => 'form-control')) !!}
               </div>
           </div>
-          <div class="col-xs-12 col-sm-12 col-md-12">
+          {{-- <div class="col-xs-12 col-sm-12 col-md-12">
               <div class="form-group">
                   <strong>Descrição:</strong>
                   {!! Form::textarea('descricao', null, array('placeholder' => 'Descrição documento','class' => 'form-control')) !!}
               </div>
-          </div>
+          </div> --}}
 					<div class="col-xs-12 col-sm-12 col-md-12">
               <div class="form-group">
-                  <strong>Selecionar Usuario:</strong>
+                <strong>Selecionar Arquivo:</strong>
 						{!! Form::file('image') !!}
 				 </div>
 				 </div>
@@ -63,7 +57,10 @@
               <div class="form-group">
                   <strong>Selecionar Usuario:</strong>
                   <br />
-                  {!! Form::select('data', $data, null, ['class' => 'testando']) !!}
+                  {!! Form::select('data', $data, null, ['class' => 'form-control select2']) !!}
+
+
+
               </div>
           </div>
           <div class="col-xs-12 col-sm-12 col-md-12 text-right">
@@ -74,4 +71,5 @@
 	</div>
 	</div>
 	</div>
+
 @endsection

@@ -49,13 +49,12 @@
                         <div class="{{ $errors->has('category') ? ' has-error' : '' }}">
                             <label for="category" class="control-label">Categoria</label>
 
-
-                                <select id="category" type="category" class="form-control" name="category">
-                                    <option value="">Selecionar categoria</option>
-                                    @foreach ($categories as $category)
-                        <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                    @endforeach
-                                </select>
+                              <select id="category" type="category" class="form-control" name="category">
+                                  <option value="">Selecionar categoria</option>
+                                  @foreach ($categories as $category)
+                                      <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                  @endforeach
+                              </select>
 
                                 {{-- @if ($errors->has('category'))
                                     <span class="help-block">
@@ -80,6 +79,28 @@
                                     </span>
                                 @endif --}}
                           </div>
+                        </div>
+
+                        <div class="boxform">
+                          <div class="{{ $errors->has('title') ? ' has-error' : '' }}">
+                              <label for="torre" class="control-label">Torre</label>
+                              <input id="torre" type="text" class="form-control" name="torre" value="{{ old('torre') }}">
+                          </div>
+                        </div>
+
+
+                        <div class="boxform">
+                          <div class="{{ $errors->has('title') ? ' has-error' : '' }}">
+                            <label for="andar" class="control-label">Andar</label>
+                            <input id="andar" type="text" class="form-control" name="andar" value="{{ old('andar') }}">
+                          </div>
+                        </div>
+
+                        <div class="boxform">
+                          <div class="{{ $errors->has('title') ? ' has-error' : '' }}">
+                              <label for="title" class="control-label">Apartamento</label>
+                                <input id="apartamento" type="text" class="form-control" name="apartamento" value="{{ old('apartamento') }}">
+                            </div>
                         </div>
 
                         <div class="textarea {{ $errors->has('message') ? ' has-error' : '' }}">

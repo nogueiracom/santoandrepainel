@@ -9,7 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}" />
 
     <title>
-      @yield('pageTitle') - Painel Administrativo      
+      @yield('pageTitle') - Painel Administrativo
     </title>
 
     @yield('before_styles')
@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 
+    <link rel="stylesheet" href="{{ asset('vendor/adminlte/') }}/plugins/select2/select2.min.css">
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/') }}/dist/css/AdminLTE.min.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/') }}/dist/css/skins/_all-skins.min.css">
@@ -110,6 +111,7 @@
     <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
     <script>window.jQuery || document.write('<script src="{{ asset('vendor/adminlte') }}/plugins/jQuery/jQuery-2.2.0.min.js"><\/script>')</script>
     <!-- Bootstrap 3.3.5 -->
+    <script src="{{ asset('vendor/adminlte') }}/plugins/select2/select2.full.min.js"></script>
     <script src="{{ asset('vendor/adminlte') }}/bootstrap/js/bootstrap.min.js"></script>
     <script src="{{ asset('vendor/adminlte') }}/plugins/pace/pace.min.js"></script>
     <script src="{{ asset('vendor/adminlte') }}/plugins/slimScroll/jquery.slimscroll.min.js"></script>
@@ -118,6 +120,8 @@
 
     <!-- page script -->
     <script type="text/javascript">
+        $(".select2").select2();
+
         // To make Pace works on Ajax calls
         $(document).ajaxStart(function() { Pace.restart(); });
 
@@ -144,5 +148,6 @@
 
     <!-- JavaScripts -->
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
+    
 </body>
 </html>

@@ -13,12 +13,15 @@
                   <button href="javascript:history.back()" type="button" class="btn btn-primary pull-right"><i class="fa fa-arrow-left" aria-hidden="true"></i> Voltar</button>
                 </a>
                 @include('chamado.flash')
-            <div class="box box-widget collapsed-box">
+            <div id="imp" class="box box-widget collapsed-box">
               <div class="box-header with-border">
-                <div class="user-block">
+                <div  data-widget="collapse" class="user-block">
                   <img class="img-circle" src="/images/cliente/user.png" alt="Imagem de Usuario">
-                  <span  data-widget="collapse" class="username">{{$ticket->user->name}}</span>
+                  <span  class="username">{{$ticket->user->name}}</span>
+
                   <p><b>Acompanhando chamado:</b> {{ $ticket->message }}
+                  </p>
+                  <p style="margin-left: 40px;">
                     @foreach ($categorias as $category)
                         @if ($category->id === $ticket->category_id)
                             <b class="categoria">Categoria:</b> {{ $category->name }}
@@ -28,12 +31,25 @@
 
                     <b class="categoria">Criado:</b> {{$ticket->created_at->diffForHumans() }}
 
+                    <?php
+                     $teste = json_decode( $ticket->nome_empreendimento);
+                     if ($teste) {
+                       foreach ($teste as $key ) {
+                        echo '<b class="categoria">Empreendimento: </b>'.$key->name.'';
+                       }
+                     }
+                    ?>
+
+                    <b class="categoria">Torre: </b>{{$ticket->torre}}
+                    <b class="categoria">Apartamento: </b>{{$ticket->apto}}
+                    <b class="categoria">Andar: </b>{{$ticket->andar}}
                   </p>
                   @foreach ($comments as $comment)
                     @if ($loop->first)
-                      <span class="description">Data da publicação: {{ $comment->created_at->format('Y-m-d') }}</span>
+                      <span class="description">Data da publicação: {{ $comment->created_at->format('d-m-Y') }}</span>
                     @endif
                   @endforeach
+                  <button style="margin-left: 50px; margin-top: 10px;" type="button" class="btn btn-primary" id="cmd" name="button">Imprimir</button>
                 </div>
                 <!-- /.user-block -->
                 <div class="box-tools">
@@ -129,12 +145,33 @@
                       <div class="form-group">
                           <button style="margin-top: 15px;" type="submit" class="btn btn-primary">Enviar</button>
                       </div>
+
                   </div>
                 </div>
               </form>
+
             </div>
+
             <!-- /.box-footer -->
           </div>
         </div>
     </div>
+
+
+    <script script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script tupe="text/javascript">
+    $(function () {
+
+    $('#cmd').click(function () {
+      var doc = new jsPDF();
+      doc.addHTML($('#imp')[0], 5, 5, {
+        'background': '#fff',
+      }, function() {
+        doc.save('chamado-<?php echo $ticket->ticket_id ?>-<?php echo $ticket->created_at ?>.pdf');
+      });
+    });
+  });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.debug.js"></script>
+    <script src="{{asset('/js/html2canvas.js')}}"></script>
 @endsection

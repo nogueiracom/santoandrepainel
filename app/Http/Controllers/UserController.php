@@ -173,4 +173,19 @@ class UserController extends Controller
     }
 
 
+    //Api users Retornando tudo
+    public function userapi($id = null) {
+
+      if ($id == null) {
+        $user = User::all();
+    } else {
+        $user = User::find($id);
+    }
+    return \Response::json(array(
+                'usuarios' => $user
+            ));
+
+    }
+
+
 }

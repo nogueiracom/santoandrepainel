@@ -22,6 +22,7 @@ class ChamadoController extends Controller
       $tickets = Chamado::paginate(10);
       $categories = ChamadoCategory::all();
 
+
       return view('chamado.index', compact('tickets', 'categories'));
   }
 
@@ -46,7 +47,9 @@ class ChamadoController extends Controller
     $items = (string)$userid;
     $pages = \DB::table('pages')
     ->where('extras->nome_usuario_dois', '=', $items)
+
     ->get();
+
 
     $categories = ChamadoCategory::all();
 
@@ -55,6 +58,18 @@ class ChamadoController extends Controller
 
   public function store(Request $request, AppMailer $mailer)
     {
+      $userid = Auth::user()->roles()->first()->id;
+      $items = (string)$userid;
+      $pages = \DB::table('pages')
+      ->where('extras->nome_usuario_dois', '=', $items)
+      ->select('pages.name')
+      ->get();
+
+      $teste = (string)$pages;
+
+
+
+
         $this->validate($request, [
                 'title'     => 'required',
                 'category'  => 'required',
@@ -70,13 +85,17 @@ class ChamadoController extends Controller
                 'priority'  => $request->input('priority'),
                 'message'   => $request->input('message'),
                 'status'    => "Aberto",
+                'nome_empreendimento' => $teste,
+                'torre'     => $request->input('torre'),
+                'apto'     => $request->input('apartamento'),
+                'andar'     => $request->input('andar'),
             ]);
 
             $ticket->save();
 
             $mailer->sendTicketInformation(Auth::user(), $ticket);
 
-            return redirect()->back()->with("status", "A ticket with ID: #$ticket->ticket_id has been opened.");
+            return redirect()->back()->with("status", "Chamado ID: #$ticket->ticket_id aberto.");
     }
 
     public function userChamados()
@@ -89,6 +108,7 @@ class ChamadoController extends Controller
 
         $tickets = Chamado::where('user_id', Auth::user()->id)->paginate(10);
         $categories = ChamadoCategory::all();
+
         return view('chamado.user_chamados', compact('tickets', 'categories', 'pages'));
     }
 

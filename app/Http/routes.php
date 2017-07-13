@@ -11,9 +11,11 @@ use App\Http\Middleware\Checkadmin;
 |
 */
 
+
+
+
+
 Route::post('/article/{id}/upload_images','vendor\backpack\crud\src\app\Http\Controllers\CrudFeatures\AjaxUploadImagesTrait@ajaxUploadImages');
-
-
 //Verificando se está logado, e redirecionando para verificar qual página o cliente está cadastrado.
 Route::group(['middleware' => ['auth']], function() {
 	Route::get('/', function(){
@@ -40,14 +42,21 @@ Route::post('novo_chamado', 'ChamadoController@store');
 
 
 Route::group(['middleware' => ['role:Admin']], function() {
-	Route::get('admin/dashboard', 'DashboardController@admindashboard');
+  Route::get('admin/dashboard', 'DashboardController@admindashboard');
 	Route::resource('/admin/users', 'UserController');
 	Route::post('/comentario', 'ChamadoComentarioController@postComment');
   Route::get('/admin/chamados/', 'ChamadoController@index');
   Route::get('/admin/chamados/{chamado_id}', 'ChamadoController@showadmin');
   Route::post('/admin/chamados/{chamado_id}', 'ChamadoController@close');
-	Route::get('/admin/usuarios/informacoes', ['as'=>'userinfo.index','uses'=>'UserFormController@index']);
-	Route::post('/admin/usuarios/informacoes', ['as'=>'userinfo.cadastro','uses'=>'UserFormController@cadastro']);
+
+  //Lista de Documentos
+  Route::get('admin/documentos', ['as'=>'userinfo.lista','uses'=>'UserFormController@lista']);
+  Route::get('admin/documentos/novo', ['as'=>'userinfo.index','uses'=>'UserFormController@index']);
+  Route::post('admin/documentos/novo', ['as'=>'userinfo.cadastro','uses'=>'UserFormController@cadastro']);
+  Route::get('admin/documentos/editar/{id}', 'UserFormController@editar');
+  Route::delete('admin/documentos/deletar/{id}', 'UserFormController@deletar');
+
+
 });
 
 
@@ -61,13 +70,6 @@ Route::group(['middleware' => ['auth']], function() {
 	Route::patch('/admin/roles/{id}',['as'=>'roles.update','uses'=>'RoleController@update','middleware' => ['permission:role-edit']]);
 	Route::delete('/admin/roles/{id}',['as'=>'roles.destroy','uses'=>'RoleController@destroy','middleware' => ['permission:role-delete']]);
 
-	Route::get('/admin/itemCRUD2',['as'=>'itemCRUD2.index','uses'=>'ItemCRUD2Controller@index','middleware' => ['permission:item-list|item-create|item-edit|item-delete']]);
-	Route::get('/admin/itemCRUD2/create',['as'=>'itemCRUD2.create','uses'=>'ItemCRUD2Controller@create','middleware' => ['permission:item-create']]);
-	Route::post('/admin/itemCRUD2/create',['as'=>'itemCRUD2.store','uses'=>'ItemCRUD2Controller@store','middleware' => ['permission:item-create']]);
-	Route::get('/admin/itemCRUD2/{id}',['as'=>'itemCRUD2.show','uses'=>'ItemCRUD2Controller@show']);
-	Route::get('/admin/itemCRUD2/{id}/edit',['as'=>'itemCRUD2.edit','uses'=>'ItemCRUD2Controller@edit','middleware' => ['permission:item-edit']]);
-	Route::patch('/admin/itemCRUD2/{id}',['as'=>'itemCRUD2.update','uses'=>'ItemCRUD2Controller@update','middleware' => ['permission:item-edit']]);
-	Route::delete('/admin/itemCRUD2/{id}',['as'=>'itemCRUD2.destroy','uses'=>'ItemCRUD2Controller@destroy','middleware' => ['permission:item-delete']]);
 });
 
 //Criação de Páginas
@@ -78,4 +80,11 @@ Route::group(['prefix' => config('backpack.base.route_prefix', 'admin'), 'middle
     // Backpack\NewsCRUD
     CRUD::resource('comunicado', 'ComunicadoCrudController');
     CRUD::resource('comunicado-category', 'ComunicadoCategoryCrudController');
+});
+
+//API REST - App
+Route::group(array('prefix' => 'api'), function()
+{
+  Route::resource('users/{id?}', 'UserController@userapi');
+
 });

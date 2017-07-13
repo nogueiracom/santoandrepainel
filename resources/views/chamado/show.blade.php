@@ -42,12 +42,15 @@
                              <p>
                                <b>{{$ticket->user->name}}</b>
                              </p>
+
                              <p><b>Acompanhando chamado:</b> {{ $ticket->message }}
                              @foreach ($categorias as $category)
                                  @if ($category->id === $ticket->category_id)
                                      <b>Categoria:</b> {{ $category->name }}
                                  @endif
                              @endforeach
+
+
 
                              @if ($ticket->status === 'Aberto')
                                  <b>Status:</b> <span class="label label-success">{{ $ticket->status }}</span>

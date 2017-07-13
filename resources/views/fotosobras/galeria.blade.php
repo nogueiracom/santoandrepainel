@@ -5,7 +5,7 @@
         <div class="sidebar">
             @foreach ($pages as $page)
             <a href="{{url('/'.$page->slug)}}">
-                <img src="{{json_decode($page->nome_usuario)->image}}" alt="{{$page->name}}" title="{{$page->name}}">
+                <img src="/{{json_decode($page->nome_usuario)->image}}" alt="{{$page->name}}" title="{{$page->name}}">
               </a>
             <ul>
               <li><img src="{{asset('/images/cliente/documento.png')}}" alt="Documentos"><span>Documentos</span><a href="{{url('/documentos')}}"></a></li>

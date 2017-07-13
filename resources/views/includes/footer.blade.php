@@ -1,7 +1,7 @@
 <ul class="social">
-  <li><a href="#"><img src="{{asset('/images/cliente/facebook.png')}}" alt="Facebook Santo André"></a></li>
-  <li><a href="#"><img src="{{asset('/images/cliente/instagram.png')}}" alt="Instagram Santo André"></a></li>
-  <li><a href="#"><img src="{{asset('/images/cliente/youtube.png')}}" alt="Youtube Santo André"></a></li>
+  <li><a target="_blank" href="https://www.facebook.com/santoandreemp/"><img src="{{asset('/images/cliente/facebook.png')}}" alt="Facebook Santo André"></a></li>
+  <li><a target="_blank" href="https://www.instagram.com/santoandreemp/"><img src="{{asset('/images/cliente/instagram.png')}}" alt="Instagram Santo André"></a></li>
+  <li><a target="_blank" href="https://www.youtube.com/channel/UCSpkkpxd1xRyYZ0xLXxZyuQ"><img src="{{asset('/images/cliente/youtube.png')}}" alt="Youtube Santo André"></a></li>
 </ul>
 <footer>
   <div class="container">

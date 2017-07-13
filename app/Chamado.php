@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Chamado extends Model
 {
   protected $fillable = [
-    'user_id', 'category_id', 'ticket_id', 'title', 'priority', 'message', 'status'
+    'user_id', 'category_id', 'ticket_id', 'title', 'priority', 'message', 'status', 'nome_empreendimento', 'torre', 'apto', 'andar'
   ];
 
   public function categoria()

@@ -26,8 +26,6 @@ Route::auth();
 Route::get('/entrar', 'DashboardController@index');
 
 
-
-
 //Paginas Sidebar
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::get('/documentos', 'Documentos@index');

@@ -7,8 +7,7 @@
 	<section class="content-header">
 	  <h1>
 	     Chamados
-	  </h1>
-
+	  </h1>    
 	</section>
 @endsection
 @section('content')

@@ -20,6 +20,8 @@
         </div>
         <div class="content-chamados margin">
             <h1><b>CHAMADO</b></h1>
+            <p>Encontrou algum problema estrutural na sua obra? Utilize este canal e comunique a ocorrência diretamente a <u>SA Empreendimentos</u>. </p>
+
             <div class="panel panel-default">
                 <div class="panel-heading">
                 </div>

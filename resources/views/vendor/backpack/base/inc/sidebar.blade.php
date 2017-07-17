@@ -43,7 +43,7 @@
               <ul class="treeview-menu">
                   <li><a href="{{ url('admin/users') }}"><i class="fa fa-circle-o"></i> <span>Cadastrados</span></a></li>
                   <li><a href="{{ url('admin/roles') }}"><i class="fa fa-circle-o"></i> <span>Funções</span></a></li>
-                  <li><a href="{{ url('admin/usuarios/index') }}"><i class="fa fa-circle-o"></i> <span>Documentação</span></a></li>
+                  <li><a href="{{ url('admin/documentos') }}"><i class="fa fa-circle-o"></i> <span>Documentação</span></a></li>
               </ul>
           </li>
           <li><a href="{{ url('admin/chamados') }}"><i class="fa fa-ticket" aria-hidden="true"></i> <span>Chamados</span></a></li>

@@ -20,7 +20,7 @@
         </div>
         <div class="content margin">
           <h1><b>DOCUMENTOS</b></h1>
-          <p>Aqui você encontra todas as documentações do seu apartamento. Caso precise de alguma documentação que não esteja disponível, por favor entre em contato conosco. </p>
+          <p>Nesta área você tem acesso a todos os documentos referentes ao seu apartamento disponíveis para download. Caso não encontre o documento que necessite, entre em contato com a <u>SA Empreendimentos</u> e faça a solicitação. </p>
           <div class="row">
           @forelse ($usuario as $key => $value)
               @if ($value->id = $value->id)

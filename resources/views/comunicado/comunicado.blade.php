@@ -20,6 +20,7 @@
         </div>
         <div class="content-comunicado margin">
           <h1><b>Comunicado</b></h1>
+          <p>Aqui você encontra todos os comunicados oficiais da <u>SA Empreendimentos</u> sobre sua obra. </p>
           <div class="row">
             <div class="box-notificacao">
                 <div class="color">

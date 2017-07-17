@@ -20,7 +20,7 @@
         </div>
         <div class="content-obras margin">
           <h1><b>FOTOS DA OBRA</b></h1>
-          <p>Aqui você pode conferir o andamento da construção. Acompanhe cada fase da obra, desde sua fundação até o acabamento.</p>
+          <p>Acompanhe mês a mês todas as etapas da construção de sua obra e veja a evolução do seu empreendimento. </p>
           <div class="row">
 
             <div class="panel-group wrap" id="bs-collapse">
